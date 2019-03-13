@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: <%= ENV.fetch('PG_USERNAME', 'moustafasallam') %>
+  password: <%= ENV.fetch('PG_PASSWORD', '') %>
+  host: <%= ENV.fetch('PG_HOST', 'localhost') %>
+
+development:
+  <<: *default
+  database: thermo_development
+
+
+test:
+  <<: *default
+  database: thermo_test
+
+production:
+  <<: *default
+  database: thermo_production
