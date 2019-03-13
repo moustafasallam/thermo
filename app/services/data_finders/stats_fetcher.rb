@@ -17,9 +17,7 @@ module DataFinders
     def get_redis_data
       data = []
       keys = @redis_client.get_all_keys
-      keys.each do |k|
-        data << @redis_client.get_by_key(k)
-      end
+      keys.each {|k| data << @redis_client.get_by_key(k)}
       data
     end
 

@@ -17,7 +17,6 @@ module DataFinders
 
     private
 
-
     def get_json
       {
         temperature: @reading['temperature'],
